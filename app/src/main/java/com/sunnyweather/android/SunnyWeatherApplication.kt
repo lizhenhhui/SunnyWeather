@@ -9,6 +9,7 @@ class SunnyWeatherApplication :Application(){
         @SuppressLint("StaticFieldLeak")
         lateinit var context: Context
         const val TOKEN="TAkhjf8d1nlSlspN"
+        
     }
 
     override fun onCreate() {
