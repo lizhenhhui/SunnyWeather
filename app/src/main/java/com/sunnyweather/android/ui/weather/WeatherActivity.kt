@@ -27,7 +27,7 @@ import kotlinx.android.synthetic.main.now.*
 import java.util.*
 
 class WeatherActivity : AppCompatActivity() {
-    val viewModel by lazy { ViewModelProviders.of(this).get(WeatherViewModel::class.java) }
+    val viewModel by lazy { ViewModelProvider(this)[WeatherViewModel::class.java] }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val decorView=window.decorView
