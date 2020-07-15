@@ -11,7 +11,7 @@
         android:layout_height="70dp"
         android:fitsSystemWindows="true"
         android:id="@+id/titleLayout">
-        <Button
+        <ImageButton
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginStart="15dp"

@@ -37,7 +37,7 @@ class PlaceAdapter (private val fragment: PlaceFragment,private val placeList:Li
             }else{
                 val intent= Intent(parent.context,WeatherActivity::class.java).apply {
                     putExtra("location_lng",place.location.lng)
-                    putExtra("location_lat",place.location.lng)
+                    putExtra("location_lat",place.location.lat)
                     putExtra("place_name",place.name)
                 }
                 fragment.startActivity(intent)

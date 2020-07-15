@@ -47,23 +47,18 @@ class WeatherActivity : AppCompatActivity() {
             drawerLayout.openDrawer(GravityCompat.START)
         }
         drawerLayout.addDrawerListener(object : DrawerLayout.DrawerListener{
-            override fun onDrawerStateChanged(newState: Int) {
-                TODO("Not yet implemented")
-            }
+            override fun onDrawerStateChanged(newState: Int) {}
 
-            override fun onDrawerSlide(drawerView: View, slideOffset: Float) {
-                TODO("Not yet implemented")
-            }
+            override fun onDrawerSlide(drawerView: View, slideOffset: Float) {}
 
             override fun onDrawerClosed(drawerView: View) {
                 val manger=getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                manger.hideSoftInputFromWindow(drawerView.windowToken,
-                InputMethodManager.HIDE_NOT_ALWAYS)
+                manger.hideSoftInputFromWindow(
+                    drawerView.windowToken,
+                    InputMethodManager.HIDE_NOT_ALWAYS)
             }
 
-            override fun onDrawerOpened(drawerView: View) {
-                TODO("Not yet implemented")
-            }
+            override fun onDrawerOpened(drawerView: View) {}
 
         })
         viewModel.weatherLiveData.observe(this, Observer { result->
@@ -94,7 +89,7 @@ class WeatherActivity : AppCompatActivity() {
         val currentTempText="${realtime.temperature.toInt()}°C"
         currentTemp.text=currentTempText
         currentSky.text= getSky(realtime.skycon).info
-        val currentPM25Text="空气指数 ${realtime.airQuality.api.chn.toInt()}"
+        val currentPM25Text="空气指数 ${realtime.airQuality.aqi.chn.toInt()}"
         currentAQI.text=currentPM25Text
         nowLayout.setBackgroundResource(getSky(realtime.skycon).bg)
         //填充forecast.xml的数据
